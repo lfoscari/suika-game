@@ -129,7 +129,7 @@ const Game = {
 
 		Composite.add(engine.world, menuStatics);
 
-		Game.loadHighscore();
+		// Game.loadHighscore();
 		Game.elements.ui.style.display = 'none';
 		Game.fruitsMerged = Array.apply(null, Array(Game.fruitSizes.length)).map(() => 0);
 
@@ -210,7 +210,7 @@ const Game = {
 				Game.sounds[`pop${bodyA.sizeIndex}`].play();
 				Composite.remove(engine.world, [bodyA, bodyB]);
 				Composite.add(engine.world, Game.generateFruitBody(midPosX, midPosY, newSize));
-				Game.addPop(midPosX, midPosY, bodyA.circleRadius);
+				// Game.addPop(midPosX, midPosY, bodyA.circleRadius);
 				Game.calculateScore();
 			}
 		});
@@ -240,7 +240,8 @@ const Game = {
 		Game.stateIndex = GameStates.LOSE;
 		Game.elements.end.style.display = 'flex';
 		runner.enabled = false;
-		Game.saveHighscore();
+		console.log("end");
+		// Game.saveHighscore();
 	},
 
 	// Returns an index, or null
@@ -283,16 +284,20 @@ const Game = {
 			collisionFilter: { mask: 0x0040 }
 		});
 
-		setTimeout(() => {
+		// setTimeout(() => {
 			if (Game.stateIndex === GameStates.DROP) {
 				Composite.add(engine.world, Game.elements.previewBall);
 				Game.stateIndex = GameStates.READY;
 			}
-		}, 500);
+		// }, 500);
 	}
 }
 
-const engine = Engine.create();
+const engine = Engine.create({
+	timing: {
+		timeScale: 3
+	}
+});
 const runner = Runner.create();
 const render = Render.create({
 	element: Game.elements.canvas,
