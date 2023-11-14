@@ -55,14 +55,15 @@
     }
 
     #game-score {
-      position: absolute;
+      /* position: absolute;
       width: 100%;
-      border-bottom: 2px dotted #333;
-      font-size: 84px;
+      border-bottom: 2px dotted #333; */
+      font-size: 24px;
       font-weight: 900;
-      padding-left: 16px;
-      color: var(--col-bg-lighter);
-      text-shadow: 3px 3px 0 var(--col-primary), -3px -3px 0 var(--col-primary), -3px 3px 0 var(--col-primary), 3px -3px 0 var(--col-primary);
+      color: #666;
+      /* padding-left: 16px; */
+      color: var(--col-primary);
+      /* text-shadow: 3px 3px 0 var(--col-primary), -3px -3px 0 var(--col-primary), -3px 3px 0 var(--col-primary), 3px -3px 0 var(--col-primary); */
     }
 
     #game-end-container {
@@ -118,6 +119,7 @@
       height: 48px;
       background-color: var(--col-bg-lighter);
       display: flex;
+      justify-content: space-around;
     }
 
     .game-status-item {
@@ -150,7 +152,6 @@
   <div class="container">
     <div id="game-canvas">
       <div id="game-ui">
-        <p id="game-score"></p>
 
         <div id="game-end-container">
           <div id="game-end">
@@ -160,9 +161,13 @@
         </div>
 
         <div id="game-status">
-          <div class="game-status-item">
+          <div class="game-status-item" style="display: none;">
             <div class="game-status-label">Highscore</div>
             <div id="game-highscore-value">0</div>
+          </div>
+          <div class="game-status-item">
+            <div class="game-status-label">Score</div>
+            <div id="game-score"></div>
           </div>
           <div class="game-status-item">
             <div class="game-status-label">Next</div>
