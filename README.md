@@ -1,7 +1,7 @@
 # Suika / Watermelon Clone
 
-![](./screenshot.png)
+The goal is to build a version of the Suika game playable by a reinforcement learning agent.
 
-Built using plain javascript and the [matter.js](https://github.com/liabru/matter-js) physics engine.
+![](./screenshot.png)
 
 **[Play the game](https://tombofry.github.io/suika-game/)**
